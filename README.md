@@ -1,2 +1,10 @@
-# wine-quality-prediction
-API applied to IA
+# TP Prédiction qualité du vin 
+Par Emmy Jaymes & Anaïs Dilvy 
+
+## Description du projet 
+
+## Choix Techniques 
+
+## Installation
+
+
