@@ -216,9 +216,9 @@ def info_vin_a_predire(volatile, chlorides, free, total, density, ph, sulphate, 
     Y_predict = model.predict(vin)
     return Y_predict
 
-# le data du vin celui de base pas celui analyser
+# le data du vin celui de base pas celui apres l'analyse
 def ajout_vin_dataFrame(volatile, citric, residual, chlorides, free, total, density, ph, sulphate, alcohol, data):
-    vin = pd.DataFrame([{'volatile acidity': volatile,'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol}])
+    vin = pd.DataFrame([{'volatile acidity': volatile, 'citric acid' : citric, 'residual sugar' : residual , 'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol}])
     data_complet = pd.concat([vin, data], ignore_index = True)
     return data_complet
 
