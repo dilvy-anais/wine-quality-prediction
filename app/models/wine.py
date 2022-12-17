@@ -13,4 +13,5 @@ class Wine(BaseModel):
     density: float = Field(0.0, gt=0.0, description="Density must be greater than 0.")
     ph: float = Field(0.0, gt=0.0, lt=14.0, description="pH must be between 0 and 14.")
     sulphates: float = Field(0.0, gt=0.0, description="Sulphates must not be a negative value")
+    alcohol:float =Field(0.0,gt=0.0,description="Alcohol must not be a negative value")
 

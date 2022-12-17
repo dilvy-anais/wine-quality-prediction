@@ -177,6 +177,15 @@ def entrainement_model_Ridge(data):
 
 # Le meilleur model qu'on a pour le moment
 def entrainement_Random_Forest(data):
+    """
+        Training our AI model.
+        Args :
+            data: input dataset
+        Returns:
+            Y_test_predict: prediction result
+            Y_Test : prediction
+            clf : AI model
+    """
     n_estimators, random_state, test_size, random_state_train = parametre_model()
     x,y = data.loc[:,data.columns != 'quality'], data.loc[:,'quality']
     X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size = test_size, random_state=random_state_train)
@@ -189,35 +198,95 @@ def entrainement_Random_Forest(data):
 
 # Sauvegarde le model
 def enregistrer_model(model):
-    joblib.dump(model, "random_forest.joblib")
+    """
+        Save the AI model into file
+        Args:
+            AI model
+        Returns:
+            N/A
+    """
+    joblib.dump(model, "app/data/random_forest.joblib")
 
 # Charge le model 
 def charger_model():
-    loaded_rf = joblib.load("random_forest.joblib")
+    """
+        Load the AI model from file
+        Args:
+            N/A
+        Returns:
+            AI model
+    """
+    loaded_rf = joblib.load("app/data/random_forest.joblib")
     return loaded_rf
 
 #Affiche les métriques de performance du model
-def metrique_model(Y_test, Y_test_predict):
+def metrique_model(Y_test, Y_test_predict)->float:
+    """
+        Calcul accuracy rate  of AI
+        Args:
+             Y_test: ndarray contains score of all wine in training dataset
+             Y_test_predict: ndarray contains score of all wine
+        Returns:
+            Accuracy rate
+    """
     print(classification_report(Y_test, Y_test_predict))
     accuracy = round(accuracy_score(Y_test, Y_test_predict),2)
     return accuracy
 
 # return les paramètre utiliser dans le model
-def parametre_model():
+def parametre_model()->list:
+    """
+        Get parameter of AI model
+        Args:
+            N/A
+        Returns:
+            List of all model parameters
+    """
     n_estimators=900
     random_state=42
     test_size = 0.5
     random_state_train=5
     return n_estimators, random_state, test_size, random_state_train
 
-def info_vin_a_predire(volatile, chlorides, free, total, density, ph, sulphate, alcohol):
+def info_vin_a_predire(volatile:float, chlorides:float, free:int, total:int, density:float, ph:float, sulphate:float, alcohol:float)->np.ndarray:
+    """
+        Predict wine quality score
+        Args:
+            volatile: volatile acidity of wine
+            chlorides: chloride of wine
+            free: free sulfur dioxide in wine
+            total: total sulfur dioxide in wine
+            density: density of wine
+            ph: acidity/base score of wine
+            sulphate: percent of sulphate in wine
+            alcohol: alcohol degree in wine
+        Returns:
+            Array with only one element contains quality score of wine
+    """
     vin = pd.DataFrame([{'volatile acidity': volatile, 'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol}])
     model = charger_model()
     Y_predict = model.predict(vin)
     return Y_predict
 
 # le data du vin celui de base pas celui apres l'analyse
-def ajout_vin_dataFrame(volatile, citric, residual, chlorides, free, total, density, ph, sulphate, alcohol, data):
+def ajout_vin_dataFrame(volatile:float, citric:float, residual:float, chlorides:float, free:float, total:int, density:int, ph:float, sulphate:float, alcohol:float, data:pd.DataFrame)->pd.DataFrame:
+    """
+        Add wine  to dataframe
+        Args:
+            volatile: volatile acidity of wine
+            citric: citric acidity of wine
+            residual : residual sugar of wine
+            chlorides: chloride of wine
+            free: free sulfur dioxide in wine
+            total: total sulfur dioxide in wine
+            density: density of wine
+            ph: acidity/base score of wine
+            sulphate: percent of sulphate in wine
+            alcohol: alcohol degree in wine
+            data : dataframe
+        Returns:
+            Return dataframe with another line
+    """
     vin = pd.DataFrame([{'volatile acidity': volatile, 'citric acid' : citric, 'residual sugar' : residual , 'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol}])
     data_complet = pd.concat([vin, data], ignore_index = True)
     return data_complet
@@ -227,11 +296,7 @@ def vin_parfait():
     return 0
 
 
-data = analyse_model(data_wine)
-test, predict, model = entrainement_Random_Forest(data)
-enregistrer_model(model)
-accuracy = metrique_model(test, predict)
-print(accuracy)
+
 
 
 
