@@ -32,34 +32,34 @@ def analyse_model(data: pd.DataFrame)->pd.DataFrame:
         pd.DataFrame: Retourne le nouveau dataFrame sans valeurs aberrantes.
 
     """
-    print("\n --- L'information des colonnes :")
-    data.info()
+    # print("\n --- L'information des colonnes :")
+    # data.info()
 
     data = data.drop(columns =['Id'])
 
-    print(" \n --- Les valeurs nulles")
-    data.isnull().sum()
+    # print(" \n --- Les valeurs nulles")
+    # data.isnull().sum()
     # Conclusion : pas de valeur null avec 1143 données
 
-    print("\n --- La matrice de corrélation")
-    corr_df = data.corr(method='pearson')
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(corr_df, annot=True)
-    #plt.show()
+    # print("\n --- La matrice de corrélation")
+    # corr_df = data.corr(method='pearson')
+    # plt.figure(figsize=(8, 6))
+    # sns.heatmap(corr_df, annot=True)
+    # plt.show()
     # Conclusion : Il n'y a pas trop de corrélation à part entre (ph et fixed acidity) -0.69 et (density et fixed acidity) 0.68
     # Si le modèle n'est pas bien on enlèvement la variable fixed acidity
 
     data = data.drop(columns =['fixed acidity'])
 
-    data.info()
+    # data.info()
 
-    #print("\n --- Les attributs de chaque colonne : \n",attribue) 
-    #attribue = data.describe().T    
+    attribue = data.describe().T 
+    print("\n --- Les attributs de chaque colonne : \n",attribue)    
 
-    #print("Les valeurs aberrantes :")
-    #plt.hist(data['fixed acidity'])
-    #plt.show()
-    #plt.title("fixed acidity")
+    print("Les valeurs aberrantes :")
+    plt.hist(data['chlorides'])
+    plt.show()
+    plt.title("chlorides")
         # Conculsion : 
     # en volatile acidity => sup apres 1.3 mais pas obligé
     # citric acid => sup apres 0.9 mais pas obligé
