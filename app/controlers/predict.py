@@ -16,7 +16,7 @@ async def predict_quality_score(wine: Wine = None)->int:
         int: quality score
     """
     try :
-        result = info_vin_a_predire(wine.volatile_acidity,wine.chlorides,wine.free_sulfur_dioxide,wine.total_sulfur_dioxide,wine.density,wine.ph,wine.sulphates,wine.alcohol)
+        result = info_wine_to_predict(wine.volatile_acidity,wine.chlorides,wine.free_sulfur_dioxide,wine.total_sulfur_dioxide,wine.density,wine.ph,wine.sulphates,wine.alcohol)
         return int(result[0])
     except :
         raise HTTPException(status_code=500, detail="Could not calculate quality score")
