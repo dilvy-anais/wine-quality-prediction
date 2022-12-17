@@ -52,7 +52,7 @@ Nous remarquons de valeurs qui sont énormement aberrantes. Mais si nous regardo
     * total sulfur dioxide nous supprimons au dessus en 250,
     * sulphates nous supprimons après 1.75.
 
-- Vérifier a distribution des classes 
+- Vérifier a distribution des classes tatatatatata
 
 ### Choix du modèle 
 
