@@ -223,8 +223,8 @@ def ajout_vin_dataFrame(volatile, citric, residual, chlorides, free, total, dens
     return data_complet
 
 def vin_parfait():
-
-    return 1
+    # analyser kes graphiques
+    return 0
 
 
 data = analyse_model(data_wine)
