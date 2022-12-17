@@ -23,13 +23,44 @@ Input variables (based on physicochemical tests):
 Output variable (based on sensory data):
 - quality | Qualité générale : note comprise en 0 et 10
 
-## Choix Techniques 
+## Choix de l'analyse du modèle
+
+Concernant l'analyse du jeu de donnée, tels que : 
+
+- Afficher les informations des différentes colonnes. 
+
+![plot](images/info_colonne.png)
+
+- Supprimer le colonne "Id", qui n'est pas utile pour prédire des données. Elle ne donne pas une informations importantes.
+
+- Vérifier valeurs nulles dans le jeu de donnée, mais après vérification nous en avons aucune. 
+
+- Regarder la corrélation entre les différentes variables. Nous analyserons toutes les colonnes sauf celle de la qualité du vin. Nous pouvons voir sur la photo ci-dessous, il y a peu de corrélation entre les différentes variables. Mais nous pouvons quand même voir que entre pH et Fixed actidity nous avons -0.69 de corrélation et 0.68 pour Density et Fixed acidity. Nous règlerons ce problème en enlevons le variable Fixed acidity.
+
+![plot](images/matrice_de_correlation.png)
+
+- Regarder les attributs des colonnes. 
+
+![plot](images/attribut_colonne.png.png)
+
+- Vérifier les valeurs abérrantes de toutes les variables. Voici-ci dessous un exemple pour les chlorides. 
+
+![plot](images/chlorides_valeur_aberrantes.png.png)
+
+Nous remarquons de valeurs qui sont énormement aberrantes. Mais si nous regardons de plus, nous en trouvons un peu quand même pour : 
+    * chlorides nous supprimons apres 0.6,
+    * total sulfur dioxide nous supprimons au dessus en 250,
+    * sulphates nous supprimons après 1.75.
+
+- Vérifier a distribution des classes 
 
 ### Choix du modèle 
 
 Nous choisissons d'utiliser la technique du machine learning puisqu'il est plus efficace, avec notre jeu de donée. En effet, l'autre technique qui est le deep learning, permet de traiter des données non-structurées : des images, du son, du texte... Ici ce n'est pas notre cas. 
 
-De plus comme tous les varaibles sont bien étiquetté, nous utiliserons les différentes méthodes du "supervised learning".
+De plus comme tous les varaibles sont bien étiquetté, nous utiliserons les différentes méthodes du "supervised learning". 
+
+Nous avons essayer différentes techniques comme le random Forest, ridge, régression linéraire
 
 ## Installation
 
