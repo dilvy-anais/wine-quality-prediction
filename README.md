@@ -93,47 +93,66 @@ Et les résultats obtenus :
  
 - Pour les chlorides :
 ![plot](images/chlorides_mean.png)
-La courbe ressemble sans compter le point correspondant à une quality de 4, à une fonction linéaire décroissante. Mais la courbe pourrait aussi ressembler à une loi normale en considérant cette fois que la donnée correspondant la quality égale à 3 soit mauvaise. En effet, nous pouvons penser que les données correspondant aux valeurs 3, 4 7 et 8 peuvent être faussé par manque de données. Contrairement aux valeurs 7 et 8, qui ont plus de résultats les concernant. En conclusion, nous pouvons dire que quelque soit la courbe pour atteindre une note de 10/10, nous aurons <span style="color: #26B260">des chlorides environ égale à 0.060</span>. (Entre chaque pas nous avons un écart de 0.005.)
+La courbe ressemble sans compter le point correspondant à une quality de 4, à une fonction linéaire décroissante. Mais la courbe pourrait aussi ressembler à une loi normale en considérant cette fois que la donnée correspondant la quality égale à 3 soit mauvaise. En effet, nous pouvons penser que les données correspondant aux valeurs 3, 4 7 et 8 peuvent être faussé par manque de données. Contrairement aux valeurs 7 et 8, qui ont plus de résultats les concernant. En conclusion, nous pouvons dire que quelque soit la courbe pour atteindre une note de 10/10, nous aurons <span style="color: #26B260">des chlorides environ égale à 0.060</span>. (Entre chaque pas nous avons un écart de 0.005.)  
+ 
  
 - Pour volatile acidity :
-![plot](images/volatile%20acidity_mean.png)
+![plot](images/volatile%20acidity_mean.png)  
+
 Nous avons ici aussi plusieurs interprétations possibles. La première, est que nous avons une droite linéaire négative qui va diminuer. La deuxième est identique sauf que nous pouvons voir que la courbe à la fin va stagner. Nous allons ici choisir de partir sur l'interprétation de la deuxième méthode et au final d'obtenir <span style="color: #26B260">une volatile acidity environ égale à 0.4.</span>
  
+ 
 - Pour free sulfur dioxide :
-![plot](images/free%20sulfur%20dioxide_mean.png)
+![plot](images/free%20sulfur%20dioxide_mean.png)  
+
 Nous voyons clairement une distribution de loi normale. Nous pouvons donc conclure que <span style="color: #26B260"> free sulfur dioxide sera environ égale à 8.</span>
  
  
 - Pour total sulfur dioxide :
-![plot](images/total%20sulfur%20dioxide_mean.png)
+![plot](images/total%20sulfur%20dioxide_mean.png)  
+
 Nous pouvons dire que ce graphique ressemble aussi à une loi normale. Mais il nous manquera de la donnée, pour déterminer exactement la valeur obtenue pour une note de 10/10. Nous pouvons quand même penser la valeur de <span style="color: #26B260"> total sulfur dioxide sera environ égale à 25 ou moins.</span>
  
+ 
 - Pour density :
-![plot](images/density_mean.png)
+![plot](images/density_mean.png)  
+
 Nous avons à peu près le même graphique que le premier sur les chlorides. L'interprétation est donc la même. Nous pouvons donc dire que <span style="color: #26B260"> la density sera environ égale à 0.9945.</span>
  
+ 
 - Pour pH :
-![plot](images/pH%20_mean.png)
-Cette courbe est sous forme d'escalier. Mais il nous manque beaucoup de données pour ce graphique pour déterminer la vraie valeur du vin parfait. Nous pouvons donc dire que <span style="color: #26B260"> le pH sera environ égale à 0.32.</span>
+![plot](images/pH%20_mean.png)  
+
+Cette courbe est sous forme d'escalier. Mais il nous manque beaucoup de données pour ce graphique pour déterminer la vraie valeur du vin parfait. Nous pouvons donc dire que <span style="color: #26B260"> le pH sera environ égale à 3.32.</span>
+ 
  
 - Pour les sulphates :
-![plot](images/sulphates_mean.png)
+![plot](images/sulphates_mean.png)  
+
 Nous pouvons voir une courbe linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> les sulphates sera environ égale à 0.85.</span>
  
+ 
 - Pour l'alcohol :
-![plot](images/alcohol_mean.png)
+![plot](images/alcohol_mean.png)  
+
 Nous pouvons voir que ce graphique ressemble aussi au premier étudié mais dans l'autre sens. Nous avons donc deux cas d'interprétations possibles. Nous partons donc sur la droite linéaire positive et donc dire que <span style="color: #26B260"> l'alcohol sera environ égale à 13.0.</span>
  
+ 
 - Pour citric acid :
-![plot](images/citric%20acid_mean.png)
+![plot](images/citric%20acid_mean.png)  
+
 Nous pouvons donc dire que nous avons une courbe linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> citric acid sera environ égale à 0.5.</span>
  
+ 
 - Pour fixed acidity :
-![plot](images/fixed%20acidity_mean.png)
+![plot](images/fixed%20acidity_mean.png)  
+
 Nous avons un graphique peu clair pour l'interprétation. Nous pouvons dire qu'il s'agit malgré des erreurs d'une droite linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> fixed acidity sera environ égale à 9.4.</span>
  
+ 
 - Pour residual sugar :
-![plot](images/residual%20sugar_mean.png)
+![plot](images/residual%20sugar_mean.png)  
+
 L'interprétation est complexe aussi sur ce graphique. Mais nous pouvons dire que cela ressemble à une loi normale. Nous pouvons donc dire que <span style="color: #26B260"> residual sugar sera environ égale à 2.66.</span>
  
 ## Installation
