@@ -138,7 +138,30 @@ L'interprétation est complexe aussi sur ce graphique. Mais nous pouvons dire qu
  
 ## Installation
  
-Il faudra ouvrir un terminal et aller dans le dossier "wine-quality-prediction"
+##Ubuntu
+Ouvrir un terminal Ctrl+T. Puis cloner le repertoire:
+```
+git clone git@github.com:dilvy-anais/wine-quality-prediction.git
+```
+Créer un environnement virtuel et activer-le:
+```
+cd wine-quality-prediction
+python3 -m venv venv
+source venv/bin/activate
+```
+Installer les dépendences : 
+```
+pip install -r requirements.txt
+``
+Lancer le programme: 
+```
+uvicorn main::app --reload
+```
+
+Pour le tester l'API, il faut aller sur l'url http://127.0.0.1/api/docs.
+
+NB: Au démarrage le model préentrainé est chargé en mémoire. Pour obtenir son accuracy il faudra le réentrainer.
+
  
  
  
