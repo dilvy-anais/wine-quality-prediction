@@ -92,30 +92,36 @@ Après analyse de ce graphique, nous avons eu l'idée de calculer la moyenne pou
  
 Et les résultats obtenus :
  
-- Pour les chlorides :
-![plot](images/chlorides_mean.png)
+- Pour les chlorides :  
+
+![plot](images/chlorides_mean.png)  
+
 La courbe ressemble sans compter le point correspondant à une quality de 4, à une fonction linéaire décroissante. Mais la courbe pourrait aussi ressembler à une loi normale en considérant cette fois que la donnée correspondant la quality égale à 3 soit mauvaise. En effet, nous pouvons penser que les données correspondant aux valeurs 3, 4 7 et 8 peuvent être faussé par manque de données. Contrairement aux valeurs 7 et 8, qui ont plus de résultats les concernant. En conclusion, nous pouvons dire que quelque soit la courbe pour atteindre une note de 10/10, nous aurons <span style="color: #26B260">des chlorides environ égale à 0.060</span>. (Entre chaque pas nous avons un écart de 0.005.)  
  
  
-- Pour volatile acidity :
+- Pour volatile acidity :  
+
 ![plot](images/volatile%20acidity_mean.png)  
 
 Nous avons ici aussi plusieurs interprétations possibles. La première, est que nous avons une droite linéaire négative qui va diminuer. La deuxième est identique sauf que nous pouvons voir que la courbe à la fin va stagner. Nous allons ici choisir de partir sur l'interprétation de la deuxième méthode et au final d'obtenir <span style="color: #26B260">une volatile acidity environ égale à 0.4.</span>
  
  
-- Pour free sulfur dioxide :
+- Pour free sulfur dioxide :  
+
 ![plot](images/free%20sulfur%20dioxide_mean.png)  
 
 Nous voyons clairement une distribution de loi normale. Nous pouvons donc conclure que <span style="color: #26B260"> free sulfur dioxide sera environ égale à 8.</span>
  
  
-- Pour total sulfur dioxide :
+- Pour total sulfur dioxide :  
+
 ![plot](images/total%20sulfur%20dioxide_mean.png)  
 
 Nous pouvons dire que ce graphique ressemble aussi à une loi normale. Mais il nous manquera de la donnée, pour déterminer exactement la valeur obtenue pour une note de 10/10. Nous pouvons quand même penser la valeur de <span style="color: #26B260"> total sulfur dioxide sera environ égale à 25 ou moins.</span>
  
  
-- Pour density :
+- Pour density :  
+
 ![plot](images/density_mean.png)  
 
 Nous avons à peu près le même graphique que le premier sur les chlorides. L'interprétation est donc la même. Nous pouvons donc dire que <span style="color: #26B260"> la density sera environ égale à 0.9945.</span>
