@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel,Field
 
-class Wine(BaseModel):
+class WineInput(BaseModel):
     fixed_acidity: float = Field(0.0, gt=0.0, description="Fixed acidity must not be a negative value")
     volatile_acidity: float = Field(0.0, gt=0.0, description="Volatile acidity must not be a negative value")
     citric_acidity: float = Field(0.0, gt=0.0, description="Citric acidity must be greater than 0.")
@@ -15,3 +15,5 @@ class Wine(BaseModel):
     sulphates: float = Field(0.0, gt=0.0, description="Sulphates must not be a negative value")
     alcohol:float =Field(0.0,gt=0.0,description="Alcohol must not be a negative value")
 
+class Wine(WineInput):
+    quality:int= Field(0,gt=0,lt=11,description="Quality score must be between 0 and 10")
