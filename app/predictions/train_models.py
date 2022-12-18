@@ -48,13 +48,7 @@ def analyse_model(data: pd.DataFrame)->pd.DataFrame:
     # Significativité des variables
     data = data.drop(columns =['residual sugar'])
     data = data.drop(columns =['citric acid'])
-    x,y = data.loc[:,data.columns != 'quality'], data.loc[:,'quality']
-
-    data.info()
-    plt.plot(data["quality"], data["chlorides"])
-    plt.show()
-    plt.scatter(data["quality"], data["chlorides"])
-    # plt.show()
+    x,y = data.loc[:,data.columns != 'quality'], data.loc[:,'quality']    
 
     return data
 
@@ -156,10 +150,11 @@ def info_wine_to_predict(volatile:float, chlorides:float, free:int, total:int, d
     return Y_predict
 
 
-def add_wine_dataFrame(volatile:float, citric:float, residual:float, chlorides:float, free:float, total:int, density:int, ph:float, sulphate:float, alcohol:float, quality:int, data:pd.DataFrame)->pd.DataFrame:
+def add_wine_dataFrame(fixed:float, volatile:float, citric:float, residual:float, chlorides:float, free:float, total:int, density:int, ph:float, sulphate:float, alcohol:float, quality:int, data:pd.DataFrame)->pd.DataFrame:
     """
         Add wine  to dataframe
         Args:
+            fixed acidity
             volatile: volatile acidity of wine
             citric: citric acidity of wine
             residual : residual sugar of wine
@@ -175,15 +170,17 @@ def add_wine_dataFrame(volatile:float, citric:float, residual:float, chlorides:f
         Returns:
             Return dataframe with another line
     """
-    vin = pd.DataFrame([{'volatile acidity': volatile, 'citric acid' : citric, 'residual sugar' : residual , 'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol, "quality" : quality}])
+    vin = pd.DataFrame([{'fixed acidity' : fixed,'volatile acidity': volatile, 'citric acid' : citric, 'residual sugar' : residual , 'chlorides': chlorides, 'free sulfur dioxide': free, 'total sulfur dioxide': total, 'density' : density, 'pH' : ph, 'sulphates' : sulphate, "alcohol" : alcohol, "quality" : quality}])
     data_complet = pd.concat([vin, data], ignore_index = True)
     return data_complet
 
 def wine_perfect() -> pd.DataFrame:
-    # analyser kes graphiques
-
-    return 0
-
-
-data = analyse_model(data_wine)
-train_Random_Forest(data)
+    """
+        perfect wine (quality = 10)
+        Args:
+            N/A
+        Returns:
+            Return dataframe with the perfect wine
+    """
+    vin = pd.DataFrame([{'volatile acidity': 0.4, 'citric acid' : 0.5, 'residual sugar' : 2.66 , 'chlorides': 0.005, 'free sulfur dioxide': 8, 'total sulfur dioxide': 25, 'density' : 0.9945, 'pH' : 0.32, 'sulphates' : 0.85, "alcohol" : 13, "quality" : 10}])
+    return vin
