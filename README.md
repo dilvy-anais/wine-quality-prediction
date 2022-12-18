@@ -138,7 +138,7 @@ L'interprétation est complexe aussi sur ce graphique. Mais nous pouvons dire qu
  
 ## Installation
  
-##Ubuntu
+### Ubuntu
 Ouvrir un terminal Ctrl+T. Puis cloner le repertoire:
 ```
 git clone git@github.com:dilvy-anais/wine-quality-prediction.git
