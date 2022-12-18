@@ -25,7 +25,7 @@ async def get_IA_model_description()->Model:
         Return :
             Models contains AI model parameter
     """
-    estimation_number,random_state,test_size, random_state_train = parametre_model()
+    estimation_number,random_state,test_size, random_state_train = setting_model()
     return Model(name="Random Forest Model", estimate_number=estimation_number, random_state=random_state, test_size=test_size, random_state_train=random_state_train)
 
 @router.put("/", status_code=201)
@@ -38,10 +38,11 @@ async def add_data_to_dataframe(wine: Wine):
             N/A
     """
     try:
-        ajout_vin_dataFrame(wine.volatile_acidity,wine.citric_acidity,wine.residual_sugar,wine.chlorides,wine.free_sulfur_dioxide,wine.total_sulfur_dioxide,wine.density,wine.ph,wine.sulphates, wine.alcohol,data_wine)
+        add_wine_dataFrame(wine.volatile_acidity,wine.citric_acidity,wine.residual_sugar,wine.chlorides,wine.free_sulfur_dioxide,wine.total_sulfur_dioxide,wine.density,wine.ph,wine.sulphates, wine.alcohol, wine.quality,data_wine)
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500, detail="Could not add this wine to the dataframe.")
+
 @router.post("/retrain")
 async def retrain_model()->float:
     """
@@ -53,7 +54,7 @@ async def retrain_model()->float:
 
     """
     data = analyse_model(data_wine)
-    test, predict, model = entrainement_Random_Forest(data)
-    enregistrer_model(model)
+    test, predict, model = train_Random_Forest(data)
+    save_model(model)
     accuracy = metrique_model(test, predict)
     return(accuracy)
