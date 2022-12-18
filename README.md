@@ -66,7 +66,8 @@ Nous avons essayé différentes techniques comme le random Forest (accuracy de 0
  
 Après étude de l'accuracy des différents modèles nous décidons de choisir l'entraînement de modèle fait avec Random Forest.
  
-Voici ci-dessous un image des différents accuracy que nous avons obtenu avec Random Forest :
+Voici ci-dessous un image des différents accuracy que nous avons obtenu avec Random Forest :  
+
 ![plot](images/accuracy_model.png)
  
 Dans cette étape, nous avons regardé l'importance de toutes les variables. Nous remarquons que nous n'avons pas de variable qui se démarque et qui n'est pas utile.
@@ -120,37 +121,43 @@ Nous pouvons dire que ce graphique ressemble aussi à une loi normale. Mais il n
 Nous avons à peu près le même graphique que le premier sur les chlorides. L'interprétation est donc la même. Nous pouvons donc dire que <span style="color: #26B260"> la density sera environ égale à 0.9945.</span>
  
  
-- Pour pH :
+- Pour pH :  
+
 ![plot](images/pH%20_mean.png)  
 
 Cette courbe est sous forme d'escalier. Mais il nous manque beaucoup de données pour ce graphique pour déterminer la vraie valeur du vin parfait. Nous pouvons donc dire que <span style="color: #26B260"> le pH sera environ égale à 3.32.</span>
  
  
-- Pour les sulphates :
+- Pour les sulphates :   
+
 ![plot](images/sulphates_mean.png)  
 
 Nous pouvons voir une courbe linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> les sulphates sera environ égale à 0.85.</span>
  
  
-- Pour l'alcohol :
+- Pour l'alcohol :  
+
 ![plot](images/alcohol_mean.png)  
 
 Nous pouvons voir que ce graphique ressemble aussi au premier étudié mais dans l'autre sens. Nous avons donc deux cas d'interprétations possibles. Nous partons donc sur la droite linéaire positive et donc dire que <span style="color: #26B260"> l'alcohol sera environ égale à 13.0.</span>
  
  
-- Pour citric acid :
+- Pour citric acid :  
+
 ![plot](images/citric%20acid_mean.png)  
 
 Nous pouvons donc dire que nous avons une courbe linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> citric acid sera environ égale à 0.5.</span>
  
  
-- Pour fixed acidity :
+- Pour fixed acidity :  
+
 ![plot](images/fixed%20acidity_mean.png)  
 
 Nous avons un graphique peu clair pour l'interprétation. Nous pouvons dire qu'il s'agit malgré des erreurs d'une droite linéaire positive. Nous pouvons donc dire que <span style="color: #26B260"> fixed acidity sera environ égale à 9.4.</span>
  
  
-- Pour residual sugar :
+- Pour residual sugar :  
+
 ![plot](images/residual%20sugar_mean.png)  
 
 L'interprétation est complexe aussi sur ce graphique. Mais nous pouvons dire que cela ressemble à une loi normale. Nous pouvons donc dire que <span style="color: #26B260"> residual sugar sera environ égale à 2.66.</span>
