@@ -152,7 +152,7 @@ source venv/bin/activate
 Installer les dépendences : 
 ```
 pip install -r requirements.txt
-``
+```
 Lancer le programme: 
 ```
 uvicorn main::app --reload
