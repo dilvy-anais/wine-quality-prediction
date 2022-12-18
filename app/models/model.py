@@ -3,7 +3,6 @@ from pydantic import BaseModel
 
 class Model(BaseModel):
     name: str
-    estimate_number:Optional[int]
-    random_state: Optional[int]
-    random_state_train: Optional[int]
-    test_size:Optional[float]
+    test_sample_size:float
+    train_sample_size:float
+    accuracy:Optional[float]

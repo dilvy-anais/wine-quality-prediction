@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.controlers import model, predict
+from app.controllers import model, predict
 
 # Solution :  https://fastapi.tiangolo.com/advanced/sub-applications/
 app = FastAPI()
